@@ -1,0 +1,1 @@
+let make: CssType.Syntax.styleRule<'data> => CssType.styleRule<'data>;
