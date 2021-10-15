@@ -1,7 +1,6 @@
 let make: CssType.Syntax.declaration => CssType.declaration;
 
-let map: (CssType.declaration, CssType.declaration => CssType.declaration) => 
-  CssType.declaration;
+let map: (CssType.declaration, CssType.declaration => (string, 'value)) => (string, 'value);
 
 external toStyleDeclaration: CssType.declaration => CssType.styleDeclaration<'data> = "%identity";
 
