@@ -10,7 +10,12 @@ var CssDeclarationFn$Ress = require("./CssDeclarationFn.js");
 function make(declaration) {
   var variant = declaration.NAME;
   if (variant === "PseudoClass") {
-    return CssPseudoClass$Ress.make(declaration);
+    return CssPseudoClass$Ress.map(CssPseudoClass$Ress.make(declaration), (function (param) {
+                  return [
+                          "&" + param[0],
+                          param[1]
+                        ];
+                }));
   } else if (variant === "NestedAtRule") {
     return CssNestedAtRule$Ress.make(declaration);
   } else if (variant === "DeclarationFn") {

@@ -11,6 +11,7 @@ let make = declaration => {
     ->CssRule.toStyleDeclaration
   | #...CssType.Syntax.pseudoClass as r => 
     CssPseudoClass.make(r)
+    ->CssPseudoClass.map(((selector, value)) => (`&${selector}`, value))
     ->CssPseudoClass.toStyleDeclaration
   | #...CssType.Syntax.nestedAtRule as r =>
     CssNestedAtRule.make(r)
