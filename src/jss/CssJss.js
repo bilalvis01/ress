@@ -55,17 +55,20 @@ function makeValueFnImportant(value) {
 function make(v) {
   var v$1 = v.VAL;
   if (v$1.NAME === "DeclarationFn") {
-    var match = CssDeclarationFn$Ress.make(v$1);
-    return [
-            match[0],
-            makeValueFnImportant(match[1])
-          ];
+    return CssDeclarationFn$Ress.map(CssDeclarationFn$Ress.make(v$1), (function (param) {
+                  return [
+                          param[0],
+                          makeValueFnImportant(param[1])
+                        ];
+                }));
+  } else {
+    return CssDeclaration$Ress.map(CssDeclaration$Ress.make(v$1), (function (param) {
+                  return [
+                          param[0],
+                          makeValueImportant(param[1])
+                        ];
+                }));
   }
-  var match$1 = CssDeclaration$Ress.make(v$1);
-  return [
-          match$1[0],
-          makeValueImportant(match$1[1])
-        ];
 }
 
 function important(v) {

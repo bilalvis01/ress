@@ -66,16 +66,14 @@ module Important = {
     switch v { 
     | #Important(v) =>
       switch v {
-      | #...CssType.Syntax.declaration as d => {
-          let (selector, value) = CssDeclaration.make(d);
-          (selector, makeValueImportant(value))
-          ->CssDeclaration.toStyleDeclaration;
-        }
-      | #...CssType.Syntax.declarationFn as d => {
-          let (selector, value) = CssDeclarationFn.make(d);
-          (selector, makeValueFnImportant(value))
-          ->CssDeclarationFn.toStyleDeclaration;
-        }
+      | #...CssType.Syntax.declaration as d =>
+          CssDeclaration.make(d)
+          ->CssDeclaration.map(((property, value)) => (property, makeValueImportant(value)))
+          ->CssDeclaration.toStyleDeclaration
+      | #...CssType.Syntax.declarationFn as d =>
+          CssDeclarationFn.make(d)
+          ->CssDeclarationFn.map(((property, value)) => (property, makeValueFnImportant(value)))
+          ->CssDeclarationFn.toStyleDeclaration
       }
     }
   };
