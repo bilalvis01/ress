@@ -1,5 +1,5 @@
 {
-  "name": "@bilalvis01/rescript-csstype",
+  "name": "resstype",
   "namespace": "ress",
   "reason": {
     "react-jsx": 3
