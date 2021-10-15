@@ -1,5 +1,8 @@
 let make: CssType.Syntax.declarationFn<'data> => CssType.declarationFn<'data>;
 
+let map: (CssType.declarationFn<'data>, CssType.declarationFn<'data> => CssType.declarationFn<'data>) => 
+  CssType.declarationFn<'data>;
+
 external toStyleDeclaration: CssType.declarationFn<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module Helper: {

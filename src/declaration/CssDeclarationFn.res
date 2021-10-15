@@ -4,6 +4,8 @@ let make = declaration => {
   };
 };
 
+let map = (declaration, callback) => callback(declaration);
+
 external toStyleDeclaration: CssType.declarationFn<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module Helper = {

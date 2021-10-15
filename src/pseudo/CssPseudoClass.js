@@ -11,6 +11,10 @@ function make(v) {
         ];
 }
 
+function map(declaration, callback) {
+  return Curry._1(callback, declaration);
+}
+
 function MakeHelper(D) {
   var pseudoClass = function (selector, declarations) {
     return {
@@ -31,5 +35,6 @@ function MakeHelper(D) {
 }
 
 exports.make = make;
+exports.map = map;
 exports.MakeHelper = MakeHelper;
 /* No side effect */

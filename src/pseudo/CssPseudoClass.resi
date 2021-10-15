@@ -1,5 +1,8 @@
 let make: CssType.Syntax.pseudoClass<'data> => CssType.styleRule<'data>;
 
+let map: (CssType.styleRule<'data>, CssType.styleRule<'data> => CssType.styleRule<'data>) => 
+  CssType.styleRule<'data>
+
 external toStyleDeclaration: CssType.styleRule<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module MakeHelper: (
