@@ -11,10 +11,12 @@
     },
     {
       "dir": "__tests__",
+      "type": "dev",
       "subdirs": true
     },
     {
       "dir": "bindings",
+      "type": "dev",
       "subdirs": true
     }
   ],
