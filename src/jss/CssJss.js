@@ -113,6 +113,8 @@ var include = CssHelper$Ress.Make({
 
 var styles = Statements.make;
 
+var Type = include.Type;
+
 var Background = include.Background;
 
 var BackgroundAttachment = include.BackgroundAttachment;
@@ -784,6 +786,7 @@ exports.Important = Important;
 exports.DeclarationBlock = DeclarationBlock;
 exports.Statements = Statements;
 exports.styles = styles;
+exports.Type = Type;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
 exports.BackgroundColor = BackgroundColor;

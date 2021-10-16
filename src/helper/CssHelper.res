@@ -4,6 +4,7 @@ module Make = (
     let declarationBlock: array<syntax<'data>> => CssType.declarationBlock<'data>;
   }
 ) => {
+  module Type = CssType;
   include CssProperty;
   include CssValueHelper;
   include CssRule.MakeHelper({ 
